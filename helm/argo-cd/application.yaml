@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    path: helm/python-repo
+    path: helm/pyapp-repo
     repoURL: https://github.com/danielsidauruk/cloud-ops.git
     targetRevision: HEAD
     # helm:
