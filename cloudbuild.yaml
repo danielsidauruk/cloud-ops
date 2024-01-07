@@ -1,0 +1,27 @@
+steps:
+  - id: 'python test python-app'
+    name: 'python'
+    dir: './python'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install flask
+        python -m unittest discover
+
+  - id : 'docker build python-app'
+    name: 'gcr.io/cloud-builders/docker'
+    dir: './python'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/${PROJECT_ID}/docker-repo/pyapp:latest',
+      '.'
+    ]
+
+  - id : 'docker push python-app'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 
+      'us-central1-docker.pkg.dev/${PROJECT_ID}/docker-repo/pyapp:latest'
+    ]
