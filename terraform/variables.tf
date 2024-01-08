@@ -1,6 +1,8 @@
 variable "project_id" {
   type        = string
   description = "ID of the Google Project"
+
+  default = "<PROJECT_ID>"
 }
 
 variable "region" {
@@ -63,6 +65,7 @@ variable "node_pool" {
     initial_node_count = number
     max_count          = number
     disk_size_gb       = number
+    node_count         = number
   })
   description = "value for GKE Node Pool"
 
@@ -73,6 +76,7 @@ variable "node_pool" {
     initial_node_count = 2
     max_count          = 4
     disk_size_gb       = 10
+    node_count         = 3
   }
 }
 

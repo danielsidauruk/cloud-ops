@@ -1,7 +1,7 @@
 resource "google_container_node_pool" "general" {
   name       = var.node_pool.name
-  cluster    = google_container_cluster.primary.id
-  node_count = 1
+  cluster    = google_container_cluster.this.id
+  node_count = 3
 
   management {
     auto_repair  = true

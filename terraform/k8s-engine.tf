@@ -1,8 +1,8 @@
-resource "google_container_cluster" "primary" {
+resource "google_container_cluster" "this" {
   name                     = var.gke.name
   location                 = var.zone
   remove_default_node_pool = true
-  initial_node_count       = 1
+  initial_node_count       = 3
   network                  = google_compute_network.main.self_link
   subnetwork               = google_compute_subnetwork.this.self_link
   logging_service          = "logging.googleapis.com/kubernetes"
@@ -16,7 +16,7 @@ resource "google_container_cluster" "primary" {
 
   addons_config {
     http_load_balancing {
-      disabled = true
+      disabled = false
     }
     horizontal_pod_autoscaling {
       disabled = false
@@ -27,9 +27,9 @@ resource "google_container_cluster" "primary" {
     channel = "REGULAR"
   }
 
-  workload_identity_config {
-    workload_pool = "cloud-ops-44.svc.id.goog"
-  }
+  # workload_identity_config {
+  #   workload_pool = "cloud-ops-44.svc.id.goog"
+  # }
 
   ip_allocation_policy {
     cluster_secondary_range_name  = "${var.network.subnetwork_name}-pod-range"
@@ -37,10 +37,8 @@ resource "google_container_cluster" "primary" {
   }
 
   private_cluster_config {
-    enable_private_nodes    = true
+    enable_private_nodes    = false
     enable_private_endpoint = false
     master_ipv4_cidr_block  = "172.16.0.0/28"
   }
-
-  
 }

@@ -6,6 +6,7 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket = "cloud-ops-tf-state"
+    # bucket = "${var.project_id}-tf-state"
     prefix = "state"
   }
   required_providers {

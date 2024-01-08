@@ -26,9 +26,9 @@ steps:
       'us-central1-docker.pkg.dev/${PROJECT_ID}/docker-repo/pyapp:latest'
     ]
 
-trigger:
-  branch_name:
-    regex: ".*"
-  tags:
-    - ".*"
-  dir: 'python'
+# trigger:
+#   branch_name:
+#     regex: ".*"
+#   tags:
+#     - ".*"
+#   dir: 'python'
