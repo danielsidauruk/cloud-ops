@@ -13,7 +13,7 @@ image:
 
 dataString:
   password: strong-password!
-  link: www.linkedin.com/in/danielsidauruk
+  link: https://github.com/danielsidauruk/cloud-ops.git
 
 imagePullSecrets: [ ]
 nameOverride: ""

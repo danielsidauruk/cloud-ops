@@ -1,12 +1,23 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>
-      Python Web Application
-    </title>
-  </head>
-  <body>
-    <h1>Basic Web Application using Python Flask Framework</h1>
-    <h2> Response from host {{ HOSTNAME }} with IP Address {{ IP }} </h2>
-    <h2> Link from ConfigMap: {{ LINK }} & password from Secret: {{ PASSWORD }} </h2>
-  </body>
+
+<head>
+    <title>Argo CD and Helm Application</title>
+</head>
+
+<body>
+    <h1>Basic Argo CD and Helm Deployment</h1>
+    <p>Response from host {{ HOSTNAME }} with IP Address {{ IP }}</p>
+    <strong>Github Repo: {{ LINK }}</strong>
+
+    <h2>The workflow landscape</h2>
+    <img src="{{ PASSWORD }}" alt="Workflow Landscape Image" />
+
+    <h2>Description</h2>
+    <ol>
+        <li>Build <strong>GCP</strong> Infrastructure using <strong>Terraform</strong>.</li>
+        <li>Operate <strong>Kubernetes</strong> in GKE Using <strong>Helm</strong>.</li>
+        <li>Continuous Integration using Cloud Build and Continuous Delivery using <strong>ArgoCD</strong>.</li>
+    </ol>
+</body>
 </html>
