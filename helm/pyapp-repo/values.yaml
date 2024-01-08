@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 4
+replicaCount: 8
 
 image:
   # Overrides the "cloud-ops-44" with your gcp project_id
