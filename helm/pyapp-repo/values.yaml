@@ -12,7 +12,7 @@ image:
   tag: latest
 
 dataString:
-  password: strong-password!
+  password: https://github.com/danielsidauruk/cloud-ops/assets/64315754/726b7acd-8527-4bde-9483-4084a0415972
   link: https://github.com/danielsidauruk/cloud-ops.git
 
 imagePullSecrets: [ ]
