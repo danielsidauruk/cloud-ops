@@ -12,11 +12,11 @@ header() {
   echo "====================================="
 }
 
-# # Install Terraform
-# header "Installing Terraform"
-# cd terraform
-# terraform init
-# terraform apply -auto-approve
+# Install Terraform
+header "Installing Terraform"
+cd terraform
+terraform init
+terraform apply -auto-approve
 
 # Trigger Cloud Build
 cd "$root_dir"
@@ -25,7 +25,7 @@ gcloud builds submit --config=cloudbuild.yaml .
 
 # Setup Argo CD Helm Chart
 header "Setting up Argo CD Helm Chart"
-# Don't forget to set the context to gke-context
+# Replaces the zone & project with yours
 gcloud container clusters get-credentials gke-cluster --zone us-central1-a --project cloud-ops-44
 kubectl create namespace argo
 helm repo add argo https://argoproj.github.io/argo-helm

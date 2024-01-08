@@ -5,4 +5,25 @@
 3. Continuous Integration using **Cloud Build** and Continuos Delivery using **ArgoCD**.
 
 ## The workflow landscape
-![cloud-ops-workflow](workflows.png)
+![cloud-ops-workflow](workflow.png)
+
+## Installation
+**Clone the Repository:**
+```
+git clone https://github.com/danielsidauruk/cloud-ops.git && cd cloud-ops
+```
+
+**Export GCP Project ID**
+```
+export GOOGLE_CLOUD_PROJECT=`gcloud info --format="value(config.project)"`
+```
+
+**Run Setup Script**
+```
+chmod +x setup.sh && ./setup.sh
+```
+
+**Destroy the Infrastructure**
+```
+terraform destroy
+```
