@@ -6,7 +6,7 @@ replicaCount: 4
 
 image:
   # Overrides the "cloud-ops-44" with your gcp project_id
-  repository: us-central1-docker.pkg.dev/cloud-ops-44/docker-repo/pyapp:latest
+  repository: us-central1-docker.pkg.dev/cloud-ops-44/docker-repo/pyapp
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
